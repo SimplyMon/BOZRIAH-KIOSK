@@ -11,7 +11,7 @@ function wakeScreen() {
 
 function resetSleepTimer() {
   clearTimeout(sleepTimeout);
-  sleepTimeout = setTimeout(activateSleepScreen, 5000);
+  sleepTimeout = setTimeout(activateSleepScreen, 50000000);
 }
 
 document.addEventListener("click", resetSleepTimer);
