@@ -1,5 +1,5 @@
 <?php
-$serverName = "SIMON"; 
+$serverName = "SIMON";
 $database   = "POSDB";
 
 try {
