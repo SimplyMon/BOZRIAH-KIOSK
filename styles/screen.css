@@ -1,0 +1,441 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Poppins", serif;
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+}
+
+/* Main Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding-right: 28%;
+  box-sizing: border-box;
+}
+
+/* Menu Section */
+.menu-section {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Category Buttons */
+.category-container {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.category-btn {
+  padding: 14px 24px;
+  color: black;
+  border: none;
+  background-color: white;
+  font-family: "Poppins", serif;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.category-btn:hover {
+  background-color: #f48734;
+  color: white;
+}
+
+/* Active Button Style */
+.category-btn.active {
+  background-color: #f48734;
+  color: white;
+}
+
+/* sub-category btn */
+/* Subcategory Container */
+.subcategory-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+/* Subcategory Buttons */
+.subcategory-btn {
+  font-family: "Poppins", serif;
+  background-color: #f48734;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.subcategory-btn:hover {
+  background-color: black;
+}
+
+/* Product Grid  */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  padding-top: 10px;
+  margin-right: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: #f0b07f;
+}
+
+/* Rectangular Image */
+.product-image {
+  width: 90%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Product Title */
+.product-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Product Price */
+.product-price {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Add Button */
+.add-btn {
+  background: #f48734;
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #000000;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Cart Section */
+.cart-section {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 28%;
+  background: white;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable Cart Items */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 170px);
+  min-height: 100px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cart Item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+/* Adjust item name width & allow text to wrap */
+.cart-item span {
+  flex: 1;
+  min-width: 100px;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Quantity & Remove Button Container */
+.cart-item div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+
+/* Quantity & Remove Button Container */
+.cart-item div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Cart Item Buttons */
+.cart-item button {
+  background: #f48734;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 20%;
+  margin: 10px;
+  font-size: 16px;
+}
+
+/* Fixed Cart Summary at Bottom */
+.cart-summary {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 28%;
+  background: white;
+  padding: 15px;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", serif;
+  font-weight: bold;
+}
+
+.cart-summary span {
+  text-align: left;
+  min-width: 60px;
+}
+
+.order-type {
+  display: flex;
+  gap: 25px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.order-type label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.order-type input {
+  transform: scale(2);
+  margin-right: 5px;
+}
+
+/* Buttons */
+.payment-btn,
+.place-order-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f48734;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: "Poppins", serif;
+}
+
+.payment-btn:hover,
+.place-order-btn:hover {
+  background-color: #000000;
+}
+
+/* Sleep Screen Overlay - Modern Glass Effect */
+.sleep-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/products/sleep1.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Active Sleep Mode */
+.sleep-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Glass container */
+.sleep-container {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent glass */
+  backdrop-filter: blur(10px); /* blur for glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* subtle shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  max-width: 400px;
+  width: 90%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover or click feedback */
+.sleep-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Style the text */
+.sleep-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.sleep-container p {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ANIM */
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(245, 130, 32, 0.3);
+  border-top-color: #f58220;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+/* Slide-up animation for product cards */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* disabled button */
+
+.not-available {
+  color: #ff0000;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.disabled-product {
+  position: relative;
+  pointer-events: none;
+  filter: grayscale(30%) brightness(0.8);
+}
+
+.disabled-product::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.082);
+  border-radius: 10px;
+}
+
+.disabled-product .not-available {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
+}

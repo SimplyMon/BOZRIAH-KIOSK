@@ -1,0 +1,123 @@
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("../assets/products/sleep.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-modal {
+  width: 90%;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeInDown 0.5s ease-out; /* Smooth downward animation */
+  position: relative;
+}
+
+.header {
+  background-color: #f58220;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 14px;
+}
+
+.success-image {
+  width: 400px;
+  margin: 20px 0;
+}
+
+.waiting-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.payment-info {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.payment-info p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.grand-total {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #f58220;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #d66a12;
+}
